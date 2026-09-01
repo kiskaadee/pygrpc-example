@@ -27,3 +27,16 @@ dev = [
     "pyright>=1.1.411",
     "ruff>=0.16.5",
 ]
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+extraPaths = ["src"]
+exclude = ["**/__pycache__"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"] # Includes isort (I)
