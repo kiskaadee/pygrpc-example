@@ -1,3 +1,5 @@
+"""Example gRPC client invoking GreeterService and TimeService."""
+
 import logging
 
 import grpc
@@ -6,9 +8,9 @@ from pygrpc.greeter.v1 import greeter_pb2, greeter_pb2_grpc
 
 
 def run() -> None:
+    """Connect to the gRPC server and invoke RPC methods."""
     # Open a gRPC channel to the running server
     with grpc.insecure_channel("localhost:50051") as channel:
-
         # Test the GreeterService
         greeter_stub = greeter_pb2_grpc.GreeterServiceStub(channel)
         hello_request = greeter_pb2.SayHelloRequest(name="Developer")
@@ -27,6 +29,7 @@ def run() -> None:
         print("TimeService Response")
         print(f"Message: {time_response.message}")
         print(f"Server Time: {dt.isoformat()} UTC.")
+
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)

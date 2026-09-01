@@ -1,7 +1,7 @@
 [project]
 name = "pygrpc"
 version = "0.1.0"
-description = "Add your description here"
+description = "A learning project demonstrating Python gRPC services with Buf and uv"
 readme = "README.md"
 authors = [{ name = "kiskaadee", email = "fcortesbio@gmail.com" }]
 requires-python = ">=3.12"
