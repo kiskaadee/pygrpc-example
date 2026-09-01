@@ -4,27 +4,40 @@ package greeter.v1;
 
 import "google/protobuf/timestamp.proto";
 
+// GreeterService provides basic greeting services.
 service GreeterService {
-rpc SayHello (SayHelloRequest) returns (SayHelloResponse) {}
+  // SayHello accepts a name and returns a personalized greeting.
+  rpc SayHello (SayHelloRequest) returns (SayHelloResponse);
 }
 
+// TimeService provides server time information.
 service TimeService {
-    rpc Time (TimeRequest) returns (TimeResponse) {}
+  // Time returns the server's current timestamp and status message.
+  rpc Time (TimeRequest) returns (TimeResponse);
 }
 
+// Request message containing the name for the greeting.
 message SayHelloRequest {
-    string name = 1;
+  // The name of the person to greet.
+  string name = 1;
 }
 
+// Response message containing the personalized greeting.
 message SayHelloResponse {
-    string message = 1;
+  // The generated greeting message.
+  string message = 1;
 }
 
+// Request message for querying the server time.
 message TimeRequest {
-    string name = 1;
+  // The name of the caller requesting the time.
+  string name = 1;
 }
 
+// Response message containing the server's timestamp and a status message.
 message TimeResponse {
-    google.protobuf.Timestamp current_time = 1;
-    string message = 2;
+  // Current UTC timestamp from the server.
+  google.protobuf.Timestamp current_time = 1;
+  // Accompanying status message.
+  string message = 2;
 }
