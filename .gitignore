@@ -11,3 +11,4 @@ wheels/
 src/pygrpc/greeter/
 .envrc
 .direnv/
+docs/index.md
