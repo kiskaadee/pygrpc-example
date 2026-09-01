@@ -1,0 +1,15 @@
+version: v2
+inputs:
+  - directory: .
+    paths:
+      - greeter
+plugins:
+  - remote: buf.build/protocolbuffers/python
+    out: src/pygrpc
+  - remote: buf.build/grpc/python
+    out: src/pygrpc
+  - remote: buf.build/community/nipunn1313-mypy
+    out: src/pygrpc
+  - remote: buf.build/community/nipunn1313-mypy-grpc
+    out: src/pygrpc
+
