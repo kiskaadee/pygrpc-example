@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package greeter.v1;
+
+import "google/protobuf/timestamp.proto";
+
+service GreeterService {
+rpc SayHello (SayHelloRequest) returns (SayHelloResponse) {}
+}
+
+service TimeService {
+    rpc Time (TimeRequest) returns (TimeResponse) {}
+}
+
+message SayHelloRequest {
+    string name = 1;
+}
+
+message SayHelloResponse {
+    string message = 1;
+}
+
+message TimeRequest {
+    string name = 1;
+}
+
+message TimeResponse {
+    google.protobuf.Timestamp current_time = 1;
+    string message = 2;
+}
